@@ -1,0 +1,37 @@
+title: |-
+  iOS Dependencies
+summary: |-
+  Install iOS dependencies (Homebrew, RubyGems & Cococapods)
+description: |-
+  Install iOS dependencies (Homebrew, RubyGems & Cococapods)
+website: https://github.com/martin-cotta/bitrise-step-ios-dependencies
+source_code_url: https://github.com/martin-cotta/bitrise-step-ios-dependencies
+support_url: https://github.com/martin-cotta/bitrise-step-ios-dependencies/issues
+host_os_tags:
+  - osx-10.10
+  - ubuntu-16.04
+project_type_tags:
+  - react-native
+type_tags:
+  - installer
+is_requires_admin_user: true
+is_always_run: false
+is_skippable: false
+toolkit:
+  bash:
+    entry_file: step.sh
+inputs:
+  - brew_packages: cowsay
+    opts:
+      title: Homebrew packages
+      summary: Name of the packages to install (separated by space)
+      description: Name of the packages to install (separated by space)
+      is_required: true
+  - source_root_path: ${BITRISE_SOURCE_DIR}/ios
+    opts:
+      title: iOS project path
+      summary: |-
+        Directory where the Gemfile/Podfile are located (absolute or relative to BITRISE\_SOURCE\_DIR)
+      description: |-
+        Directory where the Gemfile/Podfile are located (absolute or relative to BITRISE\_SOURCE\_DIR)
+      is_required: true
