@@ -65,7 +65,7 @@ function pod_install {
 
   cd "${source_root_path}"
   set -x
-  bundle _${version}_ exec pod install --no-repo-update
+  bundle _${version}_ exec pod install --no-repo-update --deployment
   { set +x; } 2>/dev/null
   echo
 
